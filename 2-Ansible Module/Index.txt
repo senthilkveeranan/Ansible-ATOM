@@ -1,0 +1,21 @@
+Depends upon the functionality some of the modules:
+===================================================
+1) system
+2) Command
+3) files
+4) Database
+5) cloud
+6) Windows ..more
+
+1.systtm:
+--------> user, group, hostname, iptables, lvg, lvol, make, mount, ping, timezone, systemd, service ..etc
+2.Command
+---------> command, expect, raw, script, shell
+3.File:
+-------> acl, archive, copy, file, find, lineinfile, replace, set, template, unarchive
+4.Database:
+-----------> mangodb, mssql, mysql,proxysql,vertica.
+5-Cloud:
+-------->
+6-Windows
+---------> 

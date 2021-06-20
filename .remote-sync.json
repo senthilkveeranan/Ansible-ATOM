@@ -1,0 +1,16 @@
+{
+  "uploadOnSave": true,
+  "useAtomicWrites": false,
+  "deleteLocal": false,
+  "hostname": "35.238.67.142",
+  "port": "22",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "ansadmin",
+  "watch": [],
+  "transport": "scp",
+  "password": "root",
+  "target": "/home/ansadmin/atom_ansible_task"
+}

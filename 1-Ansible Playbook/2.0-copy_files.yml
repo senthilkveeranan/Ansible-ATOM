@@ -1,0 +1,10 @@
+---
+   - name: Copy files to target server
+     hosts: all
+     become: True
+     become_user: root
+     tasks:
+         - name: Copy files
+           copy:
+             src: /etc/hosts
+             dest: /tmp/hosts
