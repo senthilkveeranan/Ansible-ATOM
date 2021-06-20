@@ -1,0 +1,25 @@
+---
+ - hosts: all
+   become: True
+   become_user: root
+   gather_facts: No
+   tasks:
+     - name: Example for multiple plays example
+       command: date
+
+     - name: Display resolve.conf files
+       command: cat /etc/resolv.conf
+
+     - name: Display hosts file
+       command: cat /etc/hosts
+
+     - name: Display df output
+       command: df -kh
+
+     - name: To create a folder
+       command: mkdir /folder creates=/folder
+
+     - name: Copy a file
+       copy:
+         src: /etc/hosts
+         dest: /tmp/hosts

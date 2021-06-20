@@ -16,6 +16,6 @@ Depends upon the functionality some of the modules:
 4.Database:
 -----------> mangodb, mssql, mysql,proxysql,vertica.
 5-Cloud:
--------->
+--------> amazon, atomic, azure, Centrylink, cloudscale, docker, google, openstac, wmware
 6-Windows
----------> 
+--------->win-copy, win-command, win-package
