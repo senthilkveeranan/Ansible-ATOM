@@ -1,0 +1,17 @@
+---
+ - hosts: all
+   tasks:
+      - name: To show list of examples in play
+        service:
+          name: httpd
+          enabled: true
+
+      - name: NTP service enabled
+        service:
+           name: chronyd
+           enabled: true
+
+      - name: Postfix is enabled
+        service:
+          name: postfix
+          enabled: true

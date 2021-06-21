@@ -1,0 +1,8 @@
+---
+ - hosts: web
+   tasks:
+    - name: Creating a user
+      user:
+         name: devops
+         uid: 4000
+         state: present

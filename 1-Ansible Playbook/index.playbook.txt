@@ -8,3 +8,5 @@ playbook is a collection of List of plays, in playbook we can write one play
 at a time or multipule plays at a time .
 
 What is play?
+play is a set of collection of tasks against the mentioned remote host
+on the playbook.
