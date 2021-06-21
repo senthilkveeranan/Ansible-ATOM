@@ -1,0 +1,10 @@
+Playbook:
+=========
+
+What is playbook?
+play is list of ordered set of plays which will run against the host which we
+defined in our playbook.
+playbook is a collection of List of plays, in playbook we can write one play
+at a time or multipule plays at a time .
+
+What is play?

@@ -1,0 +1,3 @@
+what is variables:
+==================
+Stores information that varies with each host 

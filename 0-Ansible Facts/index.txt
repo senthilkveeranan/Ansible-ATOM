@@ -1,0 +1,6 @@
+Ansible Facts:
+===============
+> Ansible facts are nothing but information about managed nodes like os,release
+> The task of collecting this remote system information is called
+is called facts or variables.
+> You can gather/Collect facts using 'setup' module in Ad-hoc Command
