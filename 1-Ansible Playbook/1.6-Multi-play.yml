@@ -1,0 +1,45 @@
+---
+- name: Enable internet service
+  hosts: web
+  become: yes
+  tasks:
+    - name: Latest version of http and firewalld enabled
+      yum:
+        name:
+          - httpd
+          - firewalld
+        state: latest
+
+    - name:   Copy html page
+      copy:
+        content: "Welcome to Ansible automation\n"
+        dest: /var/www/html/index.html
+
+    - name: Firewalld enabled and running
+      service:
+        name: Firewalld
+        enabled: true
+        state: started
+
+    - name: Firewalld permits and access to httpd service
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
+        immediate: yes
+
+    - name: httpd enabled and running
+      service:
+        name: httpd
+        enabled: true
+        state: started
+
+    - name: Test interanet web server
+      hosts: lolcalhost
+      become: no
+      tasks:
+        - name: connect intranet web server
+          uri:
+            url: http://node1.lab.example.com
+            return_content: yes
+            status_code: 200    

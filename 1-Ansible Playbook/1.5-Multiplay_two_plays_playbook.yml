@@ -1,0 +1,19 @@
+---
+ - hosts: web
+   tasks:
+     - name: Firs tasks
+       yum:
+           name: httpd
+           state: present
+
+     - name: Secound tasks
+       service:
+         name: httpd
+         enabled: true
+ - name: Secound Play
+   hosts: prod
+   tasks:
+       - name: First task
+         yum:
+           name: tree
+           state: present

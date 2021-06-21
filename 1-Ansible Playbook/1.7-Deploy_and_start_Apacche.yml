@@ -1,0 +1,36 @@
+---
+ - hosts: web
+   vars:
+     web_pkg: httpd
+     web_service: httpd
+     firewall_pkg: firewalld
+     firewall_service: firewalld
+     python_pkg: python3-Py-Mysql
+     rule: http
+
+   tasks:
+     - name: Required packages are installed and up to immediate
+       yum:
+         name:
+           - "{{web_pkg}}"
+           - "{{firewall_pkg}}"
+           - "{{ python_pkg}}"
+         state: latest
+
+     - name: Firewall services are started
+       service:
+         name: "{{firewall_service}}"
+         enabled: true
+         stae: started
+
+     - name: Web service are started
+       service:
+         name: "{{web_service}}"
+         enabled: true
+         state: started
+
+     - name: Web content in place
+       copy:
+         content: "Welcome to Ansible Automation World...!!!"
+         dest: /var/www/html/index.html
+     
