@@ -1,0 +1,4 @@
+ ansible web -m command -a "id"
+ ansible web -m command -a "id" -u ansadmin
+ ansible web -m copy -a 'content="Welcome to Ansible\n" dest=/etc/motd' -u ansadmin
+ ansadmin@ansible ~]$ ansible all -m command -a "cat /etc/motd"

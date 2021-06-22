@@ -1,0 +1,3 @@
+   Ansible Inventories:
+        Ansible inventories are nothing but the list of remote system put
+        together in a file know as inventory file.
