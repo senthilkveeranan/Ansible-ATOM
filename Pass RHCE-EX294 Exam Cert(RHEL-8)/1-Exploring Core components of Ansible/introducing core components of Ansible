@@ -1,3 +1,15 @@
    Ansible Inventories:
         Ansible inventories are nothing but the list of remote system put
         together in a file know as inventory file.
+
+    hostvars and group vars :
+We can define hostvars and groupvars in inventory file.
+
+how to organize the vars ?
+Normally we can define in inventory file below host and group , the
+another method we can put the vars in a file like below
+=========================================
+# vi /etc/ansible/hosts/host_vars/node1
+
+# vi /etc/ansible/hosts/grop_vars/web_grb
+=========================================
