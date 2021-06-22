@@ -1,0 +1,10 @@
+---
+ - hosts: web
+   become: true
+   become_user: root
+   gather_facts: yes
+   tasks:
+     - name: Using systemd module
+       systemd:
+         name: httpd
+         state: started

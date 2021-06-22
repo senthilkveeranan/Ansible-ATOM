@@ -13,3 +13,18 @@ another method we can put the vars in a file like below
 
 # vi /etc/ansible/hosts/grop_vars/web_grb
 =========================================
+
+ALL group in the inventory file is the default group , every host is part
+of ALL group and - group
+
+whichever the host is not part of group is ungroup which is also the
+default group in Ansible - UNGROUP
+
+Modules:
+=======
+ping, setup, yum, yum_repository, service, package, systemd, cron, lvg,
+lvol, parted, tempalte , fetch.
+
+Modules are descrite units of code that can be used from the command line
+or in the playbook tasks. Ansible execute each module usally on the remote
+node, and collect return value.

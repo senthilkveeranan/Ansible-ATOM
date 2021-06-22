@@ -1,0 +1,10 @@
+---
+ - hosts: all
+   become: true
+   become_user: root
+   gather_facts: no
+   tasks:
+     - name: Install http packages
+       yum:
+         name: httpd
+         state: absent

@@ -1,0 +1,12 @@
+---
+ - hosts: web
+   become: true
+   become_user: root
+   gather_facts: yes
+   tasks:
+     - name: Yum repository
+       yum_repository:
+         name: epel
+         description: EPEL Yum repository
+         baseurl: https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+         

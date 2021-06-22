@@ -1,0 +1,11 @@
+---
+ - hosts: node2
+   become: True
+   become_user: root
+   gather_facts: yes
+   tasks:
+      - name: Creating Volume Group in Anisble
+        lvg:
+          vg: vg.services
+          pvs: /dev/sdb
+          pesize: 128k 

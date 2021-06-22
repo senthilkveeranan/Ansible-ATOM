@@ -1,0 +1,12 @@
+---
+ - hosts: web
+   become: True
+   become_user: root
+   gather_facts: yes
+   tasks:
+     - name: Using Cron job in Ansible
+       cron:
+         name: "Check directories"
+         minute: "*"
+         hour: "*"
+         job: "ls -ial /etc/hosts"

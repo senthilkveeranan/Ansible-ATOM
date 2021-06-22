@@ -1,0 +1,10 @@
+---
+ - hosts: web
+   become: True
+   become_user: root
+   gather_facts: yes
+   tasks:
+      - name: Using package module example
+        package:
+          name: vim
+          state: present

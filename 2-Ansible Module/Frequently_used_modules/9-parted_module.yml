@@ -1,0 +1,12 @@
+---
+ - hosts: node2
+   become: true
+   become_user: root
+   gather_facts: yes
+   tasks:
+     - name: Using parted of the disk
+       parted:
+         device: /dev/sdb
+         number: 1
+         state: present
+         part_end: 1GiB
