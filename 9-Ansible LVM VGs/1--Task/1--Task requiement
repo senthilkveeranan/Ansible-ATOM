@@ -1,0 +1,9 @@
+Task:
+=====
+Create a playbook 'vgroup.yml' to create a volume group .
+Create a logical partitioned size 1GiB on all webservers nodes and
+of sizez of 600MB on prod1 node.
+Create a volume group with the name vgroup using this partition.
+
+Note: We must install package lvm2 on all managed nodes before starting
+this task.

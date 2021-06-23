@@ -1,0 +1,12 @@
+---
+ - hosts: all
+   become: True
+   become_user: root
+   gather_facts: yes
+   tasks:
+      - name: Add user in sudoers file
+        lineinfile:
+          dest: /etc/sudoers
+          state: present
+          regexp: '^%senthil'
+          line: '%senthil ALL=(ALL) NOPASSWD: ALL'

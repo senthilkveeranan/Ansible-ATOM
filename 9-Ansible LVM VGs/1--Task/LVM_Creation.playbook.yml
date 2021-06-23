@@ -1,0 +1,28 @@
+---
+ - hosts: node1
+   become: True
+   become_user: root
+   gather_facts: yes
+   tasks:
+      - name: Voulme Group Creation
+        lvg:
+          vg: senthil-vg
+          pvs: /dev/sdb5, /dev/sdb6
+
+      - name: Creating Logical Volume
+        lvol:
+          vg: senthil-vg
+          lv: senthil-lv
+          sizez: 500M
+
+      - name: Create File system
+        filesystem:
+          fstype: ext4
+          dev: /dev/senthil-vg/senthil-lv
+
+      - name: Mount Logical Volume
+        mount:
+          name: /senthil
+          src: /dev/senthil-vg/senthil-lv
+          fstype: ext4
+          state: mounted 

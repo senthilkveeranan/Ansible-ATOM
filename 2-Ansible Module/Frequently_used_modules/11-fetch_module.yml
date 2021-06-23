@@ -1,0 +1,10 @@
+---
+ - hosts: web
+   become: True
+   become_user: root
+   gather_facts: yes
+   tasks:
+     - name: Using fetch module with example
+       fetch:
+         src: /etc/hosts
+         dest: /tmp/hosts_backup

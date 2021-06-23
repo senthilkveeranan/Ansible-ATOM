@@ -1,0 +1,13 @@
+---
+ - hosts: web
+   become: True
+   become_user: root
+   gather_facts: yes
+   tasks:
+     - name: Uding lineinfile module examples
+       lineinfile:
+         path: /etc/sudoers
+         state: present
+         regexp: '^% ADMIN ALL='
+         line: '%ADMIN ALL=(ALL) NOPASSWD:ALL'
+         validate: '/usr/bin/visudo -cf %s'
