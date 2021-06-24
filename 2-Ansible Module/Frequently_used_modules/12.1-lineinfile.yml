@@ -1,0 +1,13 @@
+---
+ - hosts: web
+   become: True
+   become_user: root
+   gather_facts: yes
+   tasks:
+     - name: adding debug line in httpd.conf lineinfile
+       lineinfile:
+           path: /etc/httpd/conf/httpd.conf
+           line: "LogLevel debug"
+           state: absent
+
+       register: exampleout

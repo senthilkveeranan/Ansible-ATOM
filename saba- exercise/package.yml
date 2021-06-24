@@ -1,0 +1,10 @@
+---
+ - hosts: web
+   become: True
+   become_user: root
+   gather_facts: yes
+   tasks:
+     - name: Using package module to uninstall packages
+       package:
+          name: httpd
+          state: absent
